@@ -10,6 +10,6 @@ services:
    ports:
     - "80:80"
  php:
-   image: vulhub/php:7-fpm
+   build: .
    volumes:
     - ./www:/var/www/html
