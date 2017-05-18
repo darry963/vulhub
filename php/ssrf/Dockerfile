@@ -5,7 +5,6 @@ MAINTAINER phithon <root@leavesongs.com>
 RUN set -xe \
 	&& buildDeps=" \
 		$PHP_EXTRA_BUILD_DEPS \
-		libcurl4-openssl-dev \
 		libedit-dev \
 		libsqlite3-dev \
 		libssl-dev \
@@ -40,7 +39,7 @@ RUN set -xe \
 # --enable-mysqlnd is included here because it's harder to compile after the fact than extensions are (since it's a plugin for several extensions, not an extension in itself)
 		--enable-mysqlnd \
 		\
-		--with-curl \
+		--with-curl=/usr/local \
 		--with-libedit \
 		--with-openssl \
 		--with-zlib \
